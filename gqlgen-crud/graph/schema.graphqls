@@ -1,0 +1,25 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type System {
+  id: ID!
+  name: String!
+  os: String!
+}
+
+type Query {
+  systems: [System!]!
+}
+
+input NewSystem {
+  id: ID!
+  name: String!
+  os: String!
+}
+
+type Mutation {
+  createSystem(input: NewSystem!): System!
+  updateSystem(id:Int, input: NewSystem!): System!
+  deleteSystem(id:Int): [System!]
+}
